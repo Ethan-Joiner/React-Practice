@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
+
     render() {
         return ( <
             button className = "square"
             onClick = {
-                () => this.props.onClick() } >
-            { this.props.value } <
+                () => this.props.onClick()
+            } > { this.props.value } <
             /button>
         );
     }
@@ -26,7 +27,8 @@ class Board extends React.Component {
         return ( <
             Square value = { this.state.squares[i] }
             onClick = {
-                () => this.handleClick(i) }
+                () => this.handleClick(i)
+            }
             />
         );
     }
@@ -69,7 +71,6 @@ class Game extends React.Component {
     }
 }
 
-// ========================================
 
 ReactDOM.render( <
     Game / > ,

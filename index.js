@@ -5,7 +5,7 @@ import './index.css';
 class Square extends React.Component {
     render() {
         return ( <
-            button className = "square" > { /* TODO */ } <
+            button className = "square" > { this.props.value } <
             /button>
         );
     }
@@ -13,7 +13,8 @@ class Square extends React.Component {
 
 class Board extends React.Component {
     renderSquare(i) {
-        return <Square / > ;
+        return <Square value { i }
+        />;
     }
 
     render() {
@@ -28,8 +29,8 @@ class Board extends React.Component {
             div className = "board-row" > { this.renderSquare(3) } { this.renderSquare(4) } { this.renderSquare(5) } <
             /div> <
             div className = "board-row" > { this.renderSquare(6) } { this.renderSquare(7) } { this.renderSquare(8) } <
-            /div> <
-            /div>
+            /div> < /
+            div >
         );
     }
 }
@@ -47,8 +48,8 @@ class Game extends React.Component {
             div className = "game-info" >
             <
             div > { /* status */ } < /div> <
-            ol > { /* TODO */ } < /ol> <
-            /div> <
+            ol > { /* TODO */ } < /ol> < /
+            div > <
             /div>
         );
     }

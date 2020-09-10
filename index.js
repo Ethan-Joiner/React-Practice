@@ -5,54 +5,57 @@ import './index.css';
 // This is the initial class of square, replaced below with a Function Component
 // class Square extends React.Component {
 //     render() {
-//         return ( <
-//             button className = "square"
-//             onClick = {
-//                 () => this.props.onClick() } >
-//             { this.props.value } <
-//             /button>
+//         return ( 
+//             <button className = "square"
+//                     onClick = {() => this.props.onClick()}>
+//             { this.props.value } 
+//             </button>
 //         );
 //     }
 // }
 
+// This function creates the individual squares on the board, takes properties from the board class 
 function Square(props) {
-    return ( <
-        button className = "square"
-        onClick = { props.onClick } > { props.value } <
-        /button>
+    return ( 
+        <button 
+            className = "square"
+            onClick = { props.onClick }> 
+                      { props.value } 
+        </button>
     );
 }
 
 
 class Board extends React.Component {
-
     renderSquare(i) {
-        return ( <
-            Square value = { this.props.squares[i] }
-            onClick = {
-                () => this.props.onClick(i)
+        return ( 
+            <Square 
+                value = { this.props.squares[i] }
+                onClick = {() => this.props.onClick(i)
             }
             />
         );
     }
 
     render() {
-
-        return ( <
-            div >
-
-            <
-            div className = "board-row" > { this.renderSquare(0) } { this.renderSquare(1) } { this.renderSquare(2) } <
-            /div> 
-
-            <
-            div className = "board-row" > { this.renderSquare(3) } { this.renderSquare(4) } { this.renderSquare(5) } <
-            /div> 
-
-            <
-            div className = "board-row" > { this.renderSquare(6) } { this.renderSquare(7) } { this.renderSquare(8) } <
-            /div>  < /
-            div >
+        return ( 
+            <div>
+                <div className = "board-row"> 
+                    { this.renderSquare(0) } 
+                    { this.renderSquare(1) } 
+                    { this.renderSquare(2) } 
+                </div> 
+                 < div className = "board-row"> 
+                    { this.renderSquare(3) } 
+                    { this.renderSquare(4) } 
+                    { this.renderSquare(5) }
+                </div> 
+                <div className = "board-row"> 
+                    { this.renderSquare(6) } 
+                    { this.renderSquare(7) } 
+                    { this.renderSquare(8) } 
+                </div>  
+            </div>
         );
     }
 }
@@ -96,18 +99,17 @@ class Game extends React.Component {
         const history = this.state.history;
         const current = history[this.state.stepNumber]
         const winner = calculateWinner(current.squares)
-
         const moves = history.map((step, move) => {
             const desc = move ?
                 'Go to move #' + move :
                 'Go to game start';
-            return ( <
-                li key = { move } >
-                <
-                button onClick = {
-                    () => this.jumpTo(move)
-                } > { desc } < /button> < /
-                li >
+            return ( 
+                <li key = { move }>
+                    <button 
+                        onClick = {() => this.jumpTo(move)}> 
+                        { desc } 
+                    </button> 
+                </li>
             );
         });
 
@@ -117,24 +119,20 @@ class Game extends React.Component {
         } else {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
-        return ( <
-            div className = "game" >
-            <
-            div className = "game-board" >
-            <
-            Board squares = { current.squares }
-            onClick = {
-                (i) => this.handleClick(i)
-            }
-            /> < /
-            div > <
-            div className = "game-info" >
-            <
-            div > { status } < /div>  <
-            ol > { moves } <
-            /ol>  < /
-            div > <
-            /div>
+        return ( 
+            <div className = "game">
+                <div className = "game-board">
+                    <Board squares = { current.squares }
+                     onClick = {(i) => this.handleClick(i)}
+                    /> 
+                </div> 
+                <div className = "game-info">
+                    <div> { status } 
+                    </div>  
+                    <ol> { moves } 
+                    </ol>  
+                </div> 
+            </div>
         );
     }
 }

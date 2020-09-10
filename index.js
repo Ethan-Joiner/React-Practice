@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './Square';
 
 // This is the initial class of square, replaced below with a Function Component
 // class Square extends React.Component {
@@ -15,15 +16,7 @@ import './index.css';
 // }
 
 // This function creates the individual squares on the board, takes properties from the board class 
-function Square(props) {
-    return ( 
-        <button 
-            className = "square"
-            onClick = { props.onClick }> 
-                      { props.value } 
-        </button>
-    );
-}
+
 
 
 class Board extends React.Component {

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './Square.js';
+import './Tweet.js';
 
 // This is the initial class of square, replaced below with a Function Component
 // class Square extends React.Component {

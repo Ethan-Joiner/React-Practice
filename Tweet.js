@@ -1,9 +1,10 @@
 import React from "react";
+import './index.css';
 
-function Tweet() {
+function Tweet(props) {
     return (
-        <div>
-            <h3>Name</h3>
+        <div className="tweet">
+            <h3>{props.name}</h3>
             <p>This is a tweet</p>
             <h3>Number of likes</h3>
         </div>

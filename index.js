@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './Square.js';
-import './Tweet.js';
+import App from './App.js';
 
 // This is the initial class of square, replaced below with a Function Component
 // class Square extends React.Component {
@@ -141,8 +141,8 @@ class Game extends React.Component {
 }
 
 
-ReactDOM.render( <
-    Game / > , document.getElementById('root')
+ReactDOM.render( 
+    <App />, document.getElementById('root')
 );
 
 function calculateWinner(squares) {

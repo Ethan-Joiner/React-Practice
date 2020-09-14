@@ -1,3 +1,9 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
@@ -48,4 +54,23 @@ ul {
 
 .game-info {
     margin-left: 20px;
+}
+
+.app {
+    min-height: 100vh;
+    background: lightblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tweet {
+    height:300px;
+    width:300px;
+    background: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }

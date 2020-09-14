@@ -1,3 +1,6 @@
+import React from 'react';
+
+// eslint-disable-next-line
 function Square(props) {
     return ( 
         <button 

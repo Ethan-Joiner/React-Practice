@@ -6,9 +6,9 @@ function App() {
     return (
         <div className="app">
             <Tweet name="Dev ED" message="This is a random tweet"/>
-            <Tweet name="One"/>
-            <Tweet name="Two"/>
-            <Tweet name="Three"/>
+            <Tweet name="One" message="Eins"/>
+            <Tweet name="Two" message="Zwei"/>
+            <Tweet name="Three" message="Drei"/>
 
         </div>
     );
